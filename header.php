@@ -6,13 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap-icons.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <link rel="stylesheet" href="./css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-   
+   <link rel="icon" type="text/css" href="./bootstrap-icons-1.5.0/cart.svg" class="bi bi-cart">
    
 
     <title>Pink Park</title>
 
+<!--  -->
+<script type="text/javascript">
+  pgreload();
+  function pgreload() {
+      setTimeout(function(){window.location.reload()},8000);
+
+
+  }
+</script>
+<!--  -->
 <!-- Style -->
 <style type="text/css">
 

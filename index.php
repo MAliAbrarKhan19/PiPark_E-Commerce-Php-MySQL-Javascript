@@ -85,7 +85,7 @@ if (filter_input(INPUT_POST, 'order'))
         
       </div class="fixed-top d-flex align-items-end">
         <button type="button" class="btn btn-light " style="" data-toggle="modal" data-target="#exampleModalCenter" style="margin-top: 100px;">
-          <h5 class="text-danger"> View Cart </h5>
+          <h5 class="text-danger"> View Cart <i class="bi bi-cart4"></i> </h5>
         </button>
 <!-- Modal Button -->
 
