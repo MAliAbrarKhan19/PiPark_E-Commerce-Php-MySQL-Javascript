@@ -81,12 +81,14 @@ if (filter_input(INPUT_POST, 'order'))
 
 <!-- Modal Button -->
  <!-- Button trigger modal -->
-      <div class="" style="margin-top: 100px;">
+      <div class="row m-1 mt-6" style="margin-top: 100px;">
         
-      </div class="fixed-top d-flex align-items-end">
-        <button type="button" class="btn btn-light " style="" data-toggle="modal" data-target="#exampleModalCenter" style="margin-top: 100px;">
-          <h5 class="text-danger"> View Cart <i class="bi bi-cart4"></i> </h5>
+      <div class="offset-md-10 col-md ">
+        <button type="button" class="btn btn-outline-danger " style="" data-toggle="modal" data-target="#exampleModalCenter" style="margin-top: 100px;">
+          <b class=""> View Cart <i class="bi bi-cart4"></i> </b>
         </button>
+      </div>
+    </div>
 <!-- Modal Button -->
 
 
@@ -107,7 +109,7 @@ if (filter_input(INPUT_POST, 'order'))
                 
 
                 <!-- ----------------------------------CART---------------------- -->
-                  <table class="table table-hover table-dark">
+                  <table class="table table-hover table-danger">
                         <thead>
                           <tr>
                             <th scope="col">No.</th>
@@ -176,7 +178,7 @@ if (filter_input(INPUT_POST, 'order'))
                <!--  <button type="button" class="btn btn-success">Checkout</button> -->
                 
                 <!-- Form -->
-                <form method="post" action="index.php">
+                  <form method="post" action="index.php">
                 <!-- Clear Cart Button -->
 
                   <input type="submit" name="clearcart" class="btn btn-danger text-white" value="Clear Cart" style="margin: 8px;">
@@ -262,7 +264,7 @@ if (filter_input(INPUT_POST, 'order'))
                             <input type="hidden" name="item_price"class="form-control" value="<?php echo $row['item_price']; ?>" style="margin: 8px; width: 20px;">
 
                             <!-- // Product Quantity -->
-                            <input type="text" name="item_quantity" class="form-control col-md-2" value="1" style=" ">
+                            <input type="text" name="item_quantity" class="form-control" value="1" style="margin: 8px; width: 20px ">
 
 
                             <!-- Submit Button -->
