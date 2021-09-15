@@ -12,7 +12,8 @@ include('dbconfig.php');
  
 $item_array= array();
 
-if (filter_input(INPUT_POST, 'order')) {
+if (filter_input(INPUT_POST, 'order')) 
+{
     if (isset($_SESSION['cart'])) {
       $count= count($_SESSION['cart']);
       
@@ -82,9 +83,9 @@ if (filter_input(INPUT_POST, 'order')) {
  <!-- Button trigger modal -->
       <div class="" style="margin-top: 100px;">
         
-      </div>
-        <button type="button" class="btn btn-success fixed-bottom " style="" data-toggle="modal" data-target="#exampleModalCenter" style="margin-top: 100px;">
-          <h5 class="text-white"> View Cart </h5>
+      </div class="fixed-top d-flex align-items-end">
+        <button type="button" class="btn btn-light " style="" data-toggle="modal" data-target="#exampleModalCenter" style="margin-top: 100px;">
+          <h5 class="text-danger"> View Cart </h5>
         </button>
 <!-- Modal Button -->
 
@@ -203,7 +204,7 @@ if (filter_input(INPUT_POST, 'order')) {
 
 
         <!-- ------------Collumn 2-------------- -->
-        <div class="col-md-12 col-sm-12">
+        <div class="offset-md-1 col-md-10 col-sm-10">
           <!-- ------------Collumn 2-------------- -->
 
 
@@ -233,37 +234,43 @@ if (filter_input(INPUT_POST, 'order')) {
           ?>
 
 
-            <div class="col-md-3 col-sm-3" style=" padding: 2px;">
+            <div class="col-md-4" style=" padding: 2px;">
               <form method="post" action="index.php?action=add&id=<?php echo $row['sl'];?>">
                 <!--      ITEMS        -->
                       
                         <div class="card border-danger text-center" style="width: 80%; height: 20%;  ">
-                          <img src="<?php echo $row['item_img']; ?>" class="card-img-top" alt="..." style="height: 180px;">
+
+                          <img src="<?php echo $row['item_img']; ?>" class="card-img-top" alt="<?php echo $row['item_name']; ?>" style="height: 180px;">
                           <div class="card-body">
 
                             <h6 class="card-title"><?php echo $row['item_name']; ?></h6>
 
                             <span class="badge badge-dark">Price: <?php echo $row['item_price']; ?> TK</span>
                             
-                            <!--   //<p class="card-text font-weight-lighter"><?php echo $row['sl']; ?></p> -->
+                            <!--   //<p class="card-text font-weight-lighter"><?php  //echo $row['sl']; ?></p> -->
 
 
-                            <div class="">
+                            <!-- <div class="">
                               <p class="card-text font-weight-lighter"><?php echo $row['item_des']; ?></p>
                               
-                            </div>
+                            </div> -->
                             
                             <!-- Name -->
                             <input type="hidden" name="item_name" class="form-control" value="<?php echo $row['item_name']; ?>">
 
                             <!-- Price -->
                             <input type="hidden" name="item_price"class="form-control" value="<?php echo $row['item_price']; ?>" style="margin: 8px; width: 20px;">
+
                             <!-- // Product Quantity -->
                             <input type="text" name="item_quantity" class="form-control col-md-2" value="1" style=" ">
 
 
                             <!-- Submit Button -->
                             <input type="submit" name="order" class="btn btn-danger text-white" value="Order it" style="margin: 8px;">
+
+                            <!-- Submit Button -->
+                            <input type="submit" name="" class="btn btn-danger text-white" value="Details.." style="margin: 8px;">
+
 
                             
                           </div>
