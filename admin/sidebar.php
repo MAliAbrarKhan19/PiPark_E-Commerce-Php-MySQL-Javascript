@@ -2,10 +2,10 @@
 <!--  NAV Menu Bar -->
 
            <nav class="" align="right">
-              <a class="navbar-brand" href="../index.php">
-                  <h2>
-                      <em class="text-danger">Pink Park</em>
-                  </h2>
+              <a class="navbar-brand" href="../admin/admin.php">
+                  <h5>
+                      <em class="text-danger">Menu</em>
+                  </h5>
               </a>
               
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

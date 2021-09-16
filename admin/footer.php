@@ -2,15 +2,15 @@
     
     
 <!--    Footer Starts   -->
-   <div class="row justify-content-center bg-danger " style="margin-top: 0px;">
+<div class="row justify-content-center bg-danger " style="margin-top: 0px;">
     <div class="col-md-6">
             
                 
-            <p class="h6 " style="color:#fcfcf9; ">&copy; 2021 Copyright all rights reserved. Developed by <a href="#">ID-135</a> </p>
+        <p class="h6 " style="color:#fcfcf9; ">&copy; 2021 Copyright all rights reserved. Developed by <a href="#">ID-135</a> </p>
                 
             
-        </div>
     </div>
+</div>
 
     <!-- Optional JavaScript -->
     
