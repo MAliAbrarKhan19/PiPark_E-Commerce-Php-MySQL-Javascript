@@ -41,11 +41,8 @@
               <a class="navbar-brand" href="#">
                   <h2 class="text-white">
                       <em>Pink Park</em> <i class="text-muted">Admin Pannel</i>
-                  </h2>
-                  
+                  </h2>                  
               </a>
-
-
 
               <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav mr-auto">
@@ -63,7 +60,7 @@
                     <span class="offset-md-8 navbar-text" style="">
                       <?php echo " ".$date."    " ?> 
                     </span>
-                  </div>
+              </div>
             </nav>
       </div>
     </div>        

@@ -1,6 +1,4 @@
 
-    
-    .,.,
 <!--    Footer Starts   -->
 <div class="row justify-content-center bg-danger " style="margin-top: 0px;">
     <div class="col-md-6">

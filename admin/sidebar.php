@@ -1,7 +1,8 @@
      
 <!--  NAV Menu Bar -->
 
-           <nav class="" align="right">
+        <div class="container-fluid">
+           <nav class=" nav flex-column" >
               <a class="navbar-brand" href="../admin/admin.php">
                   <h5>
                       <em class="text-danger">Menu</em>
@@ -12,48 +13,37 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
               
-                  <!-- <div class="collapse navbar-collapse" id="navbarText"> -->
-                    <ul class="navbar-nav mr-auto">
+                  <div class="collapse navbar-collapse " id="navbarText">
+                    <ul class="nav flex-column">
                       <li class="nav-item active">
                         <a class="nav-link text-dark" href="admin.php">Admin Pannel<span class="sr-only">(current)</span></a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link text-dark" href="items.php">Items Manage</a>
+                        <a class="nav-link text-dark" href="items.php">Items</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link text-dark" href="orders.php">Orders Manage</a>
+                        <a class="nav-link text-dark" href="orders.php">Orders</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link text-dark" href="orders.php">New Admin</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link text-dark" href="logout.php">Logout</a>
+                        <a class="nav-link text-dark" href="logout.php">Log out</a>
                       </li>
-                      <li class="nav-item active">
-                        <a class="nav-link text-dark" href="../index.php">Back to Site<span class="sr-only">(current)</span></a>
+                      <li class="nav-item">
+                        <a class="nav-link text-dark" href="../index.php">Back to Site</a>
                       </li>
                     </ul>
                     
                     <span class="navbar-text " style="">
                       
                     </span>
-                  <!-- </div> -->
+                  </div>
             </nav>
-
+        </div>
 
 <!--  NAV Menu Bar -->
 
-<div class="row">
-  <div class="col">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  </div>
-</div>
    
 <!--   Header Ends     -->
    
