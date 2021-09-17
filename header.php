@@ -17,7 +17,7 @@
 
 <!--  -->
 <script type="text/javascript">
-  pgreload();
+  //pgreload();
   function pgreload() {
       setTimeout(function(){window.location.reload()},8000);
 
