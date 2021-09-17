@@ -16,22 +16,22 @@
                   <div class="collapse navbar-collapse " id="navbarText">
                     <ul class="nav flex-column">
                       <li class="nav-item active">
-                        <a class="nav-link text-dark" href="admin.php">Admin Pannel<span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-dark btn btn-outline-danger " href="admin.php">Admin Pannel<span class="sr-only">(current)</span></a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link text-dark" href="items.php">Items</a>
+                        <a class="nav-link text-dark btn btn-outline-danger" href="items.php">Items</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link text-dark" href="orders.php">Orders</a>
+                        <a class="nav-link text-dark btn btn-outline-danger" href="orders.php">Orders</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link text-dark" href="orders.php">New Admin</a>
+                        <a class="nav-link text-dark btn btn-outline-danger" href="orders.php">New Admin</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link text-dark" href="logout.php">Log out</a>
+                        <a class="nav-link text-dark btn btn-outline-danger" href="logout.php">Log out</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link text-dark" href="../index.php">Back to Site</a>
+                        <a class="nav-link text-dark btn btn-outline-danger" href="../index.php">Back to Site</a>
                       </li>
                     </ul>
                     

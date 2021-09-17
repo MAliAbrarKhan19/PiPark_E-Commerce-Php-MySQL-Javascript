@@ -40,7 +40,7 @@
            <nav class="navbar navbar-expand-md navbar-danger">
               <a class="navbar-brand" href="#">
                   <h2 class="text-white">
-                      <em>Pink Park</em> <i class="text-muted">Admin Pannel</i>
+                      <em>Pink Park</em> <small class="text-muted">Admin Pannel</small>
                   </h2>                  
               </a>
 
@@ -57,8 +57,8 @@
                       </li>
                     </ul>
                     
-                    <span class="offset-md-8 navbar-text" style="">
-                      <?php echo " ".$date."    " ?> 
+                    <span class="navbar-text" style="">
+                      <?php //echo " ".$date."    " ?> 
                     </span>
               </div>
             </nav>
