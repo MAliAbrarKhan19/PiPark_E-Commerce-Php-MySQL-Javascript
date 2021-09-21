@@ -81,21 +81,18 @@ if (filter_input(INPUT_POST, 'order'))
 
 <!-- Modal Button -->
  <!-- Button trigger modal -->
-      <div class="row fixed-top" style="margin-top:60px; ">
-        
-      <div class="offset-md-10 col-md ">
-        <button type="button" class="btn btn-danger " style="" data-toggle="modal" data-target="#exampleModalCenter" style="margin-top: 100px;">
-          <b class=""> View Cart <i class="bi bi-cart4"></i> </b>
-        </button>
+      <div class="row fixed-top" style="margin-top:66px; ">
+        <div class="offset-md-10 col-md ">
+          <button type="button" class="btn btn-danger " style="" data-toggle="modal" data-target="#exampleModalCenter" style="margin-top: 100px;">
+            <b class="h4"> View Cart <i class="bi bi-cart4"></i> </b>
+          </button>
+        </div>
       </div>
-    </div>
 <!-- Modal Button -->
 
 
-<div class="row " style="margin: 10px; padding: 10px;">
-
-
-        <!-- Modal -->
+<div class="row " style="margin: 8px; padding: 10px;">
+      <!-- Modal -->
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -199,15 +196,15 @@ if (filter_input(INPUT_POST, 'order'))
 
 background-attachment: scroll;
 background-image: url(./images/cart1.jpg); 
-background-size: cover;
+background-size: contain;
 
 ">
-  <div class="col text-center text-light" style="color:blue;">
+  <div class="col text-center text-light" style=" background-color:rgba(252, 0, 67, 0.4);">
       <h3 class="h3 m-3">
         Welcome to
       </h3>
-     <h1 class="m-4 display-1 text-danger">
-       <i>Pink Park</i>
+     <h1 class="m-4 display-1 text-light">
+       <i class="bi bi-cart">Pink Park</i>
      </h1>
      <small class="display-6 text-light m-5"> Online Ecommerce developed with Html, CSS, Bootstrap, Php and MySQL</small>
   </div>
