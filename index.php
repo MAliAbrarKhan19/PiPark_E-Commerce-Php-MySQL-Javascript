@@ -81,10 +81,10 @@ if (filter_input(INPUT_POST, 'order'))
 
 <!-- Modal Button -->
  <!-- Button trigger modal -->
-      <div class="row m-1 mt-6" style="margin-top: 100px;">
+      <div class="row fixed-top" style="margin-top:60px; ">
         
       <div class="offset-md-10 col-md ">
-        <button type="button" class="btn btn-outline-danger " style="" data-toggle="modal" data-target="#exampleModalCenter" style="margin-top: 100px;">
+        <button type="button" class="btn btn-danger " style="" data-toggle="modal" data-target="#exampleModalCenter" style="margin-top: 100px;">
           <b class=""> View Cart <i class="bi bi-cart4"></i> </b>
         </button>
       </div>
@@ -167,12 +167,12 @@ if (filter_input(INPUT_POST, 'order'))
 
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Order More !</button>
+                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Order More !</button>
                 
                 <form method="post" action="checkout.php">
                 <!-- Clear Cart Button -->
 
-                  <input type="submit" name="clearcart" class="btn btn-success text-white" value="Checkout" style="margin: 8px;">
+                  <input type="submit" name="clearcart" class="btn btn-outline-danger" value="Checkout" style="margin: 8px;">
 
                 </form>
                <!--  <button type="button" class="btn btn-success">Checkout</button> -->
@@ -194,6 +194,26 @@ if (filter_input(INPUT_POST, 'order'))
 
 </div>
 
+<!-- Block -->
+<div class="row p-5" style="
+
+background-attachment: scroll;
+background-image: url(./images/cart1.jpg); 
+background-size: cover;
+
+">
+  <div class="col text-center text-light" style="color:blue;">
+      <h3 class="h3 m-3">
+        Welcome to
+      </h3>
+     <h1 class="m-4 display-1 text-danger">
+       <i>Pink Park</i>
+     </h1>
+     <small class="display-6 text-light m-5"> Online Ecommerce developed with Html, CSS, Bootstrap, Php and MySQL</small>
+  </div>
+</div>
+<!-- Block -->
+
 
 <!-- =======================================
                    master row
@@ -203,6 +223,10 @@ if (filter_input(INPUT_POST, 'order'))
                    master row
 ====================================== -->
 
+
+
+
+  
 
 
         <!-- ------------Collumn 2-------------- -->
@@ -264,14 +288,19 @@ if (filter_input(INPUT_POST, 'order'))
                             <input type="hidden" name="item_price"class="form-control" value="<?php echo $row['item_price']; ?>" style="margin: 8px; width: 20px;">
 
                             <!-- // Product Quantity -->
-                            <input type="text" name="item_quantity" class="form-control" value="1" style="margin: 8px; width: 20px ">
+                            <div class="form-floating ml-auto">
+                              <input type="text" name="item_quantity" id="floatingquantity" class="form-control" value="1" style=" "> 
+                              <label class="form-label" for="floatingquantity">Quantity</label>
 
+  
+                            </div>
+                            
 
-                            <!-- Submit Button -->
+                            <!-- Order Button -->
                             <input type="submit" name="order" class="btn btn-danger text-white" value="Order it" style="margin: 8px;">
 
-                            <!-- Submit Button -->
-                            <input type="submit" name="" class="btn btn-danger text-white" value="Details.." style="margin: 8px;">
+                            <!-- Details Button -->
+                            <input type="submit" name="" class="btn btn-outline-danger" value="Details " style="margin: 8px;">
 
 
                             

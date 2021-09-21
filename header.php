@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<link rel="stylesheet" href="./css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap-icons.css">
+    <!-- Bootstrap CSS -->
+
    <link rel="icon" type="text/css" href="./bootstrap-icons-1.5.0/cart.svg" class="bi bi-cart">
    
 
@@ -40,9 +44,9 @@
       
 <!--  NAV Menu Bar -->
 
-   <div class="row bg-danger">
+   <div class="row bg-danger sticky-top mb-3" style="z-index:1;">
       <div class="col-md-12">
-           <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+           <nav class="navbar navbar-expand-md navbar-dark bg-danger">
               <a class="navbar-brand" href="#">
                   <h2>
                       <em>Pink Park</em>
@@ -50,13 +54,13 @@
               </a>
               
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+              <span class="navbar-toggler-icon"></span>
               </button>
               
-                  <div class="collapse navbar-collapse" id="navbarText">
+                  <div class="collapse navbar-collapse mr-4" id="navbarText">
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item active">
-                        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.php">Home</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#"></a>
@@ -66,10 +70,12 @@
                       </li>
                     </ul>
                     
-                    <span class="navbar-text " style="">
-                      Order Online Your Favourite Thinks
-                    </span>
+
+                    
                   </div>
+                  <span class=" navbar-text ml-3" style="">
+                      Order Online Your Favourite Things
+                    </span>
             </nav>
       </div>
    </div>
