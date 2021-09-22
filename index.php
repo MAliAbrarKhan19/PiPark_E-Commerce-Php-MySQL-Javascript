@@ -198,7 +198,7 @@ if (filter_input(INPUT_POST, 'order'))
 
 background-attachment: scroll;
 background-image: url(./images/cart1.jpg); 
-background-size: contain;
+background-size: cover;
 
 ">
   <div class="col text-center text-light" style=" background-color:rgba(252, 0, 67, 0.4);">

@@ -89,74 +89,57 @@ if(isset($_POST['submit']))
 
 
 <div class="row">
- <!--=====================================================================================================================-->
  <!-- 									Master Row																		  -->
- <!--=====================================================================================================================-->
+	<!-- side bar Starts -->
+	<div class="col-md-2">
+	<!-- side bar Starts -->
+		<?php include 'sidebar.php'; ?>
 
- <!--=====================================================================================================================-->
-<!-- ================================== Side Bar ======================================================================== -->
- <!--=====================================================================================================================-->
-
-<div class="col-md-2 " style=" background-color: #d3d6d8;">
-	<?php include 'sidebar.php'; ?>
-	
-</div>
-
-
-
- <!--=====================================================================================================================-->
-<!-- ================================== Side Bar ======================================================================== -->
- <!--=====================================================================================================================-->
+	<!-- side bar Ends -->
+	</div>
+	<!-- side bar Ends -->
 
 
 <div class="col-md-10">
-<!--=====================================================================================================================-->
-<!-- ================================== Main Content ======================================================================== -->
-<!--=====================================================================================================================-->
+<!-- ================================== Main Content ===================================================================== -->
 
 	<div class="row">
 	<!-- ---------------------------------------Items Input form ------------------------------------------------------------ -->
-
-		<div class="col-md-4">
-					<div class="border border-warning m-1 p-1">
-
-						
+	<div class="row">
+		<div class="col-md-10">
+					<div class="m-1 p-1">
+							
 				<!-- ================Edit Form== -->
 							<?php 
 							//Verify  Session Edit 
 								if (!empty($_SESSION['edit_sl'])) {
 							// <!-- Get Data -->
-                           include 'dbconfig.php';//connect info to database 
-                            	$d=$_SESSION['edit_sl'];
-                            	$query= "SELECT*FROM item WHERE sl ='$d'";
-					            $result= mysqli_query($con, $query);
-					            // $num_rows=mysqli_num_rows($result);
-					            
-					            
-              					// $row = mysqli_fetch_assoc($result);
-              					$row=mysqli_fetch_assoc($result);
+               include 'dbconfig.php';//connect info to database 
+                	$d=$_SESSION['edit_sl'];
+                	$query= "SELECT*FROM item WHERE sl ='$d'";
+			            $result= mysqli_query($con, $query);
+			            // $num_rows=mysqli_num_rows($result);
+			            
+			            
+          					// $row = mysqli_fetch_assoc($result);
+          					$row=mysqli_fetch_assoc($result);
 
 							?>
 							<h3 class="text-danger">
-							Edit Items here
+									Edit Items here
 							</h3>
 						<form method="POST" enctype="multipart/form-data">
 
 								<div class="form-group">
 				    			<label  >SL</label>
-								
 								<input class="form-control form-control-lg" type="text" name="sl" value="<?php echo $row['sl']; ?>">
 								</div>
-
 								<div class="form-group">
 				    			<label  >Item Name</label>
-									
 									<input class="form-control form-control-lg" type="text" name="item_name" value="<?php echo $row['item_name']; ?>">
 								</div>
-
 								<div class="form-group">
 					    			<label >Description</label>
-									
 									<input class="form-control form-control-lg" type="text" name="item_des" value="<?php echo $row['item_des']; ?>">
 								</div>
 
@@ -186,7 +169,7 @@ if(isset($_POST['submit']))
 
 							 ?>
 							 <h3 class="text-danger">
-								Input Items here
+								Items Input Form 
 							</h3>
 
 						<form method="POST" enctype="multipart/form-data">
@@ -226,22 +209,23 @@ if(isset($_POST['submit']))
 					</div>
 					
 				</div>
-	<!-- ---------------------------------------Items Input form ------------------------------------------------------------ -->
+			</div>	
+	<!-- ----Items Input form ------------ -->
 
 
-	<!-- ---------------------------------------Ttems display Tables------------------------------------------------- -->
-		<div class="col-md-8   p-1 ">
-			<div class="border border-warning m-1">
-				<table class="table table-responsive table-hover table-secondary">
+	<!-- --------------------------Ttems display Tables----------------------------------- -->
+	<div class="row">
+		<div class="col-md-11 p-1 ">
+			<div class="border border-danger m-2">
+				<table class="table table-hover table-striped table-info">
                         <thead>
                           <tr>
-                            <th scope="col">SL. no.</th>
-                            <th scope="col"> Image </th>
-                            <th scope="col">Item Name</th>
-                            <th scope="col"> Price </th>
-                            <th scope="col">Description</th>
+                            <th scope="col">SL.</th>
+                            <th scope="col"> Item Image </th>
+                            <th scope="col">Item Name </th>
+                            <th scope="col"> Price (TK)</th>
+                            <th scope="col">Item Description</th>
                             <th scope="col"> Edit </th>
-                            <th scope="col"> Remove </th>
                           </tr>
                         </thead>
 
@@ -249,13 +233,13 @@ if(isset($_POST['submit']))
                            <?php include 'dbconfig.php';//connect info to database ?>
                             <?php 
                             	$query= "SELECT*FROM item ORDER BY item_name ASC";
-					            $result= mysqli_query($con, $query);
-					            $num_rows=mysqli_num_rows($result);
-					            $i=1;
-					            if ($num_rows > 0){
-              						while ($row = mysqli_fetch_assoc($result)){
+									            $result= mysqli_query($con, $query);
+									            $num_rows=mysqli_num_rows($result);
+									            $i=1;
+									            if ($num_rows > 0){
+				              						while ($row = mysqli_fetch_assoc($result)){
 
-					             ?>
+									             ?>
 
 					     <form  method="POST" enctype="multipart/form-data">
                         <tr>
@@ -275,20 +259,15 @@ if(isset($_POST['submit']))
                         	<!-- Des --><td>
                         		<?php echo $row['item_des']; ?>
                         	</td>
-                        	<!--Edit  --><td>
-                        			<a href ="items.php?action=edit&id=<?php echo $row['sl']; ?>" class="btn btn-warning text-white">Edit</a>
+                        	<!--Edit  -->
+                        	<td>
+                        			<a href ="items.php?action=edit&id=<?php echo $row['sl']; ?>" class="btn btn-outline-danger">Edit</a>
 
-                        			<!-- <input class="btn btn-warning text-white" type="submit" name="edit" value="Edit"> -->
-                        		
-                        	</td>
-                        	<!--Remove  --><td>
+                        	
+                        	<!--Remove  -->
                         		<input type="hidden" name="sl" value="<?php echo $row['sl']; ?>">
                         		<!-- Button trigger modal -->
-                        		<input type="submit" name="delete" class="btn btn-danger" value="Delete" >
-								<!-- <button type="submit" name="delmodalsl" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal" value="">
-								  Delete 
-								</button> -->
-                        		
+                        		<input type="submit" name="delete" class="btn btn-outline-danger" value="Delete" >
                         	</td>
                         </tr>
 
@@ -301,27 +280,20 @@ if(isset($_POST['submit']))
 				</table>
 			</div>
 		</div>
-	<!-- ---------------------------------------Ttems display form------------------------------------------------- -->
+	</div>
+	<!-- ---------------------Ttems display form------------------------------ -->
 
 
 	</div>
 
-<!--=====================================================================================================================-->
-<!-- ================================== Main Content ======================================================================== -->
-<!--=====================================================================================================================-->
+<!-- ================================== Main Content ============================================ -->
+
 </div>
-
-
- <!--=====================================================================================================================-->
  <!-- 									Master Row																		  -->
- <!--=====================================================================================================================-->
 </div>
 
 
-
-
-
-    
+   
     
 <!--    Footer Starts   -->
 <?php include 'footer.php'; ?>

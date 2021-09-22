@@ -7,26 +7,18 @@
 
 	<!-- side bar Starts -->
 	<div class="col-md-2">
-	<!-- side bar Starts -->
 		<?php include 'sidebar.php'; ?>
-
-	<!-- side bar Ends -->
 	</div>
 	<!-- side bar Ends -->
 
 	<!-- Contents starts -->
-	<div class="col-md-10">
-		<div class="row">	
+	<div class="col-md-9">
+		<!-- <div class="row">	 -->
 	<!-- Contents starts -->
-		<!-- Orders starts -->
 		<!-- Orders starts -->
 		 		<!-- ===================================Orders BOX ===== -->
 					
-          <div class="col-md-4 card border-danger text-center m-1 p-2" style="width: 80%; height: 20%;  ">
-              <!-- <img src=" " class="card-img-top" alt="..." style="height: 180px;"> -->
-              <div class="card-body p-1">
-                <h1 class="card-title text-danger"> ORDERS </h1>
-                <span class="badge badge-danger"></span>
+          
 
                 <?php include 'dbconfig.php';//connect info to database ?>
                 <?php 
@@ -34,45 +26,89 @@
                    $result= mysqli_query($con, $query);
                    $num_rows=mysqli_num_rows($result);
                  ?>
-
-                 <h4 class="card-text font-weight-lighter"> Total Number of Orders</h4>
-                <p class="card-text font-weight-lighter display-3"><?php echo $num_rows; ?></p>
-                
-
-                
+              <div class="row mt-5 mb-3 p-1 bg-danger">
+              	<div class="col-md-8">
+              		<h1 class="text-light"> ORDERS </h1>
+                 	<h4 class="font-weight-lighter"> Total Number of Orders</h4>
+              	</div>
+              	<div class="col-md-4">
+              		<p class="display-2"><?php echo $num_rows; ?></p>
+              	</div>                
               </div>
-          </div>
-		<!-- Orders ends   -->
 		<!-- Orders ends   -->
 
 		<!-- Pending Orders box Starts -->
-		<!-- Pending Orders box Starts -->
-			<div class="col-md-4 card border-warning text-center m-1 p-2" style="width: 80%; height: 20%;  ">
-	            <!-- <img src=" " class="card-img-top" alt="..." style="height: 180px;"> -->
-	            <div class="card-body p-1">
-	              <h1 class="card-title text-danger"> PENDING ORDERS </h1>
-	              <span class="badge badge-danger"></span>
-                <?php include 'dbconfig.php';//connect info to database ?>
-	              
-	             	<?php 
-	              $d='NULL';
-	              $query= "SELECT*FROM invoice WHERE inv_delivery= 'on the way'";
-	              $result= mysqli_query($con, $query);
-	              $num_rows=mysqli_num_rows($result);       ?>
+					          <?php include 'dbconfig.php';//connect info to database ?>
+			              
+			             	<?php 
+			              $query= "SELECT*FROM invoice WHERE inv_delivery= 'on the way'";
+			              $result= mysqli_query($con, $query);
+			              $num_rows=mysqli_num_rows($result);       ?>
+              <div class="row mt-2 mb-3 p-1 bg-warning">
+              	<div class="col-md-8">
+              		<h1 class="text-light"> PENDING ORDERS  </h1>
+                 	<h4 class="font-weight-lighter"> Number of Orders On the way</h4>
+              	</div>
+              	<div class="col-md-4">
+              		<p class="display-2"><?php echo $num_rows; ?></p>
+              	</div>                
+              </div>
+ 		<!-- Pending Orders box Ends   -->
+ 		<!-- Orders Delivered box Starts   -->
 
-	              <h4 class="card-text font-weight-lighter text-danger">Number of Orders On the way</h4>
-	              <p class="card-text font-weight-lighter display-3 text-danger"><?php echo $num_rows; ?></p>
-	              
-	              <!-- Submit Button -->
-	              <!-- <input type="submit" name="order" class="btn btn-warning text-white" value="Order it" style="margin: 8px;"> -->
+			             	<?php 
+			              $query= "SELECT*FROM invoice WHERE inv_delivery= 'done'";
+			              $result= mysqli_query($con, $query);
+			              $num_rows=mysqli_num_rows($result);       ?>
+              <div class="row mt-2 mb-3 p-1 bg-success">
+              	<div class="col-md-8">
+              		<h1 class="text-light"> ORDERS Delivered  </h1>
+                 	<h4 class="font-weight-lighter"> Number of Orders 'done' or Delivered </h4>
+              	</div>
+              	<div class="col-md-4">
+              		<p class="display-2"><?php echo $num_rows; ?></p>
+              	</div>                
+              </div>
+ 		<!-- Orders Delivered box Ends   -->
+ 		<!-- Orders Cancelled  box Starts   -->
+					          <?php include 'dbconfig.php';//connect info to database ?>
 
-	              
-	            </div>
-	        </div>
-		<!-- Pending Orders box Ends   -->
-		<!-- Pending Orders box Ends   -->
+			             	<?php 
+			              $query= "SELECT*FROM invoice WHERE inv_delivery= 'canceled'";
+			              $result= mysqli_query($con, $query);
+			              $num_rows=mysqli_num_rows($result);       ?>
+              <div class="row mt-2 mb-3 p-1 bg-dark">
+              	<div class="col-md-8">
+              		<h1 class="text-light"> ORDERS Cancelled </h1>
+                 	<h4 class="font-weight-lighter text-light"> Number of Orders Cancelled </h4>
+              	</div>
+              	<div class="col-md-4">
+              		<p class="display-2 text-light"><?php echo $num_rows; ?></p>
+              	</div>                
+              </div>
+ 		<!-- Orders Cancelled  box Ends   -->
+ 		<!-- Items  box Starts   -->
+					          <?php include 'dbconfig.php';//connect info to database ?>
+
+			             	<?php 
+			              $query= "SELECT*FROM item ORDER BY sl ASC";
+			              $result= mysqli_query($con, $query);
+			              $num_rows=mysqli_num_rows($result);       ?>
+              <div class="row mt-2 mb-3 p-1 bg-info">
+              	<div class="col-md-8">
+              		<h1 class="text-light">Items </h1>
+                 	<h4 class="font-weight-lighter text-light"> Number of Items </h4>
+              	</div>
+              	<div class="col-md-4">
+              		<p class="display-2 text-light"><?php echo $num_rows; ?></p>
+              	</div>                
+              </div>
+ 		<!-- Items box Ends   -->
+
+
+
 	<!-- Contents ends   -->
-		</div>
+		<!-- </div> -->
 	</div>
 	<!-- Contents ends   -->
 

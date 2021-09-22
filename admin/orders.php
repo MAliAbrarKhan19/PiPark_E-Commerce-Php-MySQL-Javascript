@@ -83,43 +83,37 @@ if (isset($_GET["action"])) {
 
 
 <div class="row">
- <!--=====================================================================================================================-->
+ 
  <!-- 									Master Row																		  -->
- <!--=====================================================================================================================-->
+ 
 
- <!--=====================================================================================================================-->
-<!-- ================================== Side Bar ======================================================================== -->
- <!--=====================================================================================================================-->
+ 
+	<!-- side bar Starts -->
+	<div class="col-md-2">
+	<!-- side bar Starts -->
+		<?php include 'sidebar.php'; ?>
 
-<div class="col-md-2 " style=" background-color: #d3d6d8;">
-	<?php include 'sidebar.php'; ?>
-	
-</div>
-
-
-
- <!--=====================================================================================================================-->
-<!-- ================================== Side Bar ======================================================================== -->
- <!--=====================================================================================================================-->
-
+	<!-- side bar Ends -->
+	</div>
+	<!-- side bar Ends -->
 
 
 <div class="col-md-10 " style=" ">
-<!--===============================================Orders Manage Page ===================================================== -->
+<!--  =============Orders Manage Page    == -->
 	<div class="row">
 	<!-- ----------------------------------------------Orders Table------------------------------------------------------------ -->
-			<div class="col-md-12 border border-warning m-1">
+			<div class="col-md-11 m-1">
 			<!-- -------------------------------------Table-------------------------------------------------------------------- -->
-				<div class="border border-warning m-2">
-				<table class="table table-responsive table-hover table-light">
+				<div class="m-2 p-1">
+				<table class="table table-bordered border-danger table-hover">
                         <thead class="">
                           <tr>
                             <th scope="col">SL. no.</th>
                             <th scope="col"> Date & Time</th>
                             <th scope="col">Invoice ID</th>
-                            <th scope="col"> Bill Total </th>
-                            <th scope="col"> Details </th>
-                            <th scope="col"> Delivery Status </th>
+                            <th scope="col"> Billed Total Amount </th>
+                            <!-- <th scope="col"> Details </th> -->
+                            <th scope="col"> Delivery Status     </th>
                             <th scope="col"> Remove </th>
                           </tr>
                         </thead>
@@ -128,8 +122,7 @@ if (isset($_GET["action"])) {
                         <?php include 'dbconfig.php';//connect info to database ?>
                             <?php 
                             	$query= "SELECT*FROM invoice ORDER BY id Desc";//inv_date, inv_time,inv_id
-                            	//SELECT `id`, `inv_id`, `inv_time`, `inv_date`, `inv_name`, `inv_email`, `inv_mobile`, `inv_address`, `inv_destaddress`, `inv_total`, `inv_shippingcharge`, `inv_vat`, `inv_grandtotal`, `inv_inwords`, `inv_delivery` FROM `invoice` WHERE 1
-					            $result= mysqli_query($con, $query);
+                            	$result= mysqli_query($con, $query);
 					            $num_rows=mysqli_num_rows($result);
 					            $i=1;
 					            if ($num_rows > 0){
@@ -157,6 +150,9 @@ if (isset($_GET["action"])) {
                         			<?php //echo $row['inv_id']; 
                         			$inv_id= $row['inv_id'];
                         			echo $inv_id; ?>
+
+                        			<!-- Order Details  -->
+                        			<a href ="invoiceview.php?action=view&id=<?php echo $row['inv_id']; ?>" class="btn btn-outline-danger ">Order Details</a>
                         			
                         		</th>
 
@@ -167,9 +163,9 @@ if (isset($_GET["action"])) {
                         		</th>
 
                         		<!-- Details -->
-                        		<th>
-                        			<a href ="invoiceview.php?action=view&id=<?php echo $row['inv_id']; ?>" class="btn btn-warning text-dark">Order Details</a>
-                        		</th>
+                        		<!-- <th> -->
+                        			<!-- <a href ="invoiceview.php?action=view&id=<?php echo $row['inv_id']; ?>" class="btn btn-warning text-dark">Order Details</a> -->
+                        		<!-- </th> -->
                         		<th>
                         			<!--Delivery Status  -->
                         			<em>
@@ -212,12 +208,12 @@ if (isset($_GET["action"])) {
 
 	</div>
 	
-<!--===============================================Orders Manage Page ===================================================== -->
+<!--  =============Orders Manage Page    == -->
 </div>
 
- <!--=====================================================================================================================-->
+ 
  <!-- 									Master Row																		  -->
- <!--=====================================================================================================================-->
+ 
 </div>
 
 
