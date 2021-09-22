@@ -66,7 +66,7 @@
                         <a class="nav-link" href="#"></a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="./admin/admin.php">adminpanel</a>
+                        <a class="nav-link" href="./admin/admin.php">| Admin panel |</a>
                       </li>
                     </ul>
                     

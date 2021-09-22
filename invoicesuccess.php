@@ -6,38 +6,32 @@
 <?php include 'header.php'; ?>
 <!--   Header Ends     -->
 
-<div class="row">
-	<br>
-</div>
 
-		<div class="row">
-			<br>
-		</div>
+		<div class="row  m-5">
+			<div class="col-md-8 offset-md-2 p-5" style="
 
-		<div class="row ">
-			<div class="col-md-8 offset-md-2 border border-warning">
-				<div class="row border border-light">
-					<div class="col-md-12 border border-warning">
-						<h1 class="text-warning text-center">
-							Your order is submited <em>Invoice ID:<?php echo $_SESSION['invoice_id']; ?></em> our agent will call you to confim the order in 15 mins.
+background-attachment: scroll;
+background-image: url(./images/cart.jpg); 
+background-size: cover;
+
+">
+				<div class="row border border-light" style="background-color:rgba(252, 0, 67, 0.4);">
+					<div class="col-md-12 ">
+						<p class="text-light text-center display-5">We have recieved your order. Please keep the invoice ID shown below to track your order.</p>
+						<h1 class="bg-light text-danger text-center">
+							<em>Invoice ID:<?php echo $_SESSION['invoice_id']; ?></em> 
 						</h1>
+						<p class="text-dark text-center">For any query please call our customer care center @ 010012345678 </p>
+
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="row">
-			<br>
-		</div>
-
-
-
 
 
 <!-- ========================================= -->
-<div class="row">
-	<br><br>
-</div>
+
 
 <?php unset($_SESSION['cart']); ?>
 <!-- ========================================= -->
