@@ -1,5 +1,5 @@
 <?php session_start();
-error_reporting(0);
+error_reporting();
 
 	$date=date("d,M,Y, l");
 	$time=date("h:i:s a");
@@ -248,29 +248,6 @@ $invoice_id=$invoice_id_tstmp.$invoice_id_tstmp1.("786").rand(1,78699);
 // // echo "count =".$count;
 //  for ($i=0; $i <$count ; $i++) { 
  	
-//  	$sl =$_SESSION['cart'][$i]['sl'];
-//  	$item_name=$_SESSION['cart'][$i]['item_name'];
-//  	$item_price=$_SESSION['cart'][$i]['item_price'];
-//  	$item_quantity=$_SESSION['cart'][$i]['item_quantity'];
-//  	$item_total=($_SESSION['cart'][$i]['item_price']*$_SESSION['cart'][$i]['item_quantity']);
-//  	echo "  ||  ";
-//  	echo "invoice_id".$invoice_id."  NO. ".($i+1)."sl:  ".$inv_itemsl." Name : ".$inv_itname."  Price : ".$inv_itemprice."  Quantity : ".$inv_itemquantity."  Total: ".$item_total;
-
-//  	echo "  ||  ";
-
-				//$insertdb="INSERT INTO inv_orders(inv_id, inv_cartno, sl, item_name, item_price, item_quantity, item_total)VALUES ('$invoice_id', '$nv_cartno', '$sl', '$item_name', '$item_price', '$item_quantity', '$item_total')";
-				// if(mysqli_query($connect, $insertdb))
-				//   {
-				//   echo "<h1>Order DB inserted successfully..!</h1>";
-				//   }
-				//   else {
-				//     echo "<h1>Order DB NOT inserted! ! ! Error!!</h1>";
-				//   }
-
-
- 	//INSERT INTO `inv_orders`(`order_sl`, `inv_id`, `Inv_cartno`, `sl`, `item_name`, `item_price`, `item_quantity`, `item_total`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])
- // }
-
 
 
 include 'dbconfig.php';//connect info to database 
@@ -336,13 +313,18 @@ include 'dbconfig.php';//connect info to database
 		  else {
 		    echo "<h1>INVOICE DB NOT inserted! ! ! Error!!</h1>";
 		  }
+
+
+//========================Invoice Table Udate code OK=======================
+
+
 	}
 		
  ?>
 
-<!-- ===================================================================================================== -->
-<!--                                   Cart Invoice to Database                                     -->
-<!-- ====================================================================================================== -->
+<!-- ========================================================================================================================== -->
+<!--                                                   Cart Invoice to Database                                                 -->
+<!-- ========================================================================================================================== -->
 
 <!--   Header Starts   -->
 <?php include 'header.php'; ?>
@@ -365,9 +347,9 @@ include 'dbconfig.php';//connect info to database
 		<div class="row ">
 			<div class="col-md-8 offset-md-2 border border-danger">
 				<div class="row border border-light">
-					<div class="col-md-12 border border-danger">
-						<h1 class="text-danger text-center">
-							<?php echo 'There is nothing in your Cart... Go to FoodPark <a href="index.php">home</a> order'; ?>
+					<div class="col-md-12 border bg-danger">
+						<h1 class="text-light text-center">
+							<?php echo 'There is nothing in your Cart... <p class="bg-light text-danger">Go to   <a href="index.php"><i class="display-3 bi bi-cart">PinkPark </i> home</a> order</p>'; ?>
 						</h1>
 					</div>
 				</div>
@@ -389,190 +371,196 @@ include 'dbconfig.php';//connect info to database
 
 <!-- ========================================= -->
 <div class="row">
-
+	<br><br>
 </div>
 <!-- ========================================= -->
 
 <!-- ---------------------------------Checkout Form & Invoice--------------------------------------- -->
 
 <div class="row">
-		<div class="row" >
-			<div class="col-md-12 m-1 p-4 border border-danger">
+	<div class="offset-md-1 col-md-10 border border-danger" style=" border-width: 3px !important;">
+		<div class="row border border-light" >
+			<div class="col-md-12 m-1 border border-danger">
 				
 
-		<div class="row bg-danger">
-			<h2 class="text-white text-center">
-				Invoice
-			</h2>
-		</div>
+
+				<div class="row bg-danger">
+					<h2 class="text-white text-center">
+						Invoice
+					</h2>
+				</div>
 		<!-- Border Row ================ -->
 		<div class="row">
-			<div class="col-md-12 p-1">
-					<!-- ---------------------------------CART List---------------------------------------------- -->
-							<div class="row">
-								<div class="col-md-12">
+			<div class="offset-md-1 col-md-10">
+				
+		
+				
 
-									<div class="row">
-										<!-- form -->
-										<div class="col-md-6 p-4">
-											
-											<!-- --------------------------Invice Details Form-------------------------------------- -->
-											<form method="POST" enctype="multipart/form-data">
-												<div class="form-group">
-													<label class="col-md-6">Invoice ID</label>
-													<!-- Inv_id --><input type="text" name="inv_id" value="<?php echo $invoice_id; ?> " class="col-md-4 form-control"> 
-												</div>
-												<div class="form-group">
-													<!-- date --><input type="text" name="inv_date" value="<?php echo $date; ?>" class="form-control">
-													<!-- time --><input type="text" name="inv_time" value=" <?php echo $time; ?>" class="form-control "> 
-												</div>
-												<div class="form-group">
-													<!-- name --><input type="text" name="inv_name" placeholder="Enter Name Here"  class="form-control form-control-lg"> 
-													
-												</div>
-												<div class="form-group">
-													<!-- mobile --><input type="text" name="inv_mobile" placeholder="Enter mobile no." class="form-control form-control-lg"> 
-													<!-- email --><input type="text" name="inv_email" placeholder="Enter Email" class="form-control form-control-lg"> 
-													<!-- address --><input type="text" name="inv_address"placeholder="Enter Your Address Here" class="form-control form-control-lg"> 
-													<!-- destaddress --><input type="text" name="inv_destaddress" placeholder="Enter Destination Address" class="form-control form-control-lg"> 
-
-													<!-- hIDDEN VALUES -->
-													<!-- total --><input type="hidden" name="inv_total" value="<?php echo $total; ?>" class="form-control form-control-lg"> 
-													<!-- vat --><input type="hidden" name="inv_vat" value="<?php echo $vat; ?>" class="form-control form-control-lg"> 
-													<!-- shippingcharge --><input type="hidden" name="inv_shippingcharge" value="<?php echo $inv_shippingcharge; ?>" class="form-control form-control-lg">
-													<!-- grandtotal --><input type="hidden" name="inv_grandtotal" value="<?php echo $grandtotal; ?>" class="form-control form-control-lg">
-													<!-- $inwords --><input type="hidden" name="inv_inwords" value="<?php echo $inwords.' TAKA ONLY'; ?>" class="form-control form-control-lg">
-													<!-- hIDDEN VALUES -->
-
-													<!-- Submit Button -->
-													<input type="submit" name="submit" value="Confirm Order" class="btn btn-outline-danger m-4">
-												</div> 
-
-											</form>
-											<!-- --------------------Invice Details Form----------------------------------- -->
-
-								</div>
-								<!-- form -->
-								
-								<!-- cart details -->
-								<div class="col-md-6 p-4">
-									<!-- =========================================================================== -->
-									<!-- ----------------------------------CART---------------------- -->
-							                <table class="table table-dark table-striped table-hover border border-danger text-light">
-							                		<thead>
-							                			<th colspan="6" class="bg-danger">Order details</th>
-							                		</thead>
-							                        <thead>
-							                          <tr>
-							                            <th scope="col">No.</th>
-							                            <th scope="col">Item</th>
-							                            <th scope="col">Price</th>
-							                            <th scope="col">Quantity</th>
-							                            <th scope="col">Total</th>
-							                            <th scope="col"> X </th>
-							                          </tr>
-							                        </thead>
-
-							                    <!-- Fetch Cart Items Dynamically -->
-							                    <?php 
-							                    //Declare Cal vaariables
-							                    $total=0;
-							                    $grandtotal=0;
-							                    $inv_shippingcharge=50;
-							                    $vat=0;
-							                      if(!empty($_SESSION["cart"])){
-							                        $total=0;
-							                        $cartno=1;// for counting item no
-							                        foreach ($_SESSION["cart"] as $key => $value) {
-							                        	
-							                        ?>
-							                        <!-- Fetch Cart Items Dynamically -->
-
-							                        <tbody>
-							                          <tr>
-							                            <th scope="row"><?php echo $cartno; ?></th>
-							                            <td><?php echo $value['item_name']; ?></td>
-							                            <td><?php echo $value['item_price']; ?> BDT</td>
-							                            <td><?php echo $value['item_quantity']; ?></td>
-							                            <td><?php echo number_format(($value['item_quantity']*$value['item_price']), 2);?></td>
-							                            <td><a href ="checkout.php?action=delete&id=<?php echo $value['sl']; ?>"><span class="badge-danger">  X  </span></a></td>
-							                          </tr>
-							                       
-
-							                          <?php 
-							                          //Calculating all totals
-							                            $total= $total+($value['item_quantity']*$value['item_price']);
-
-							                            $vat= ($total*15)/100;//Vat calculation
-
-							                            $grandtotal= $total+$vat+$inv_shippingcharge;//
-
-							                            $inwords=numberTowords($grandtotal);
-							                           ?>
-							                          
-							                        <!-- Fetch Cart Items Dynamically -->
-							                    <?php 
-							                       $cartno+=1;
-
-							                        }
-							                        	
-							                      }
-
-							                    ?>
-							                    <tr>	
-							                    		<td></td>
-							                    		<td></td>
-							                            <th colspan="2" scope="row">Total</th>
-							                            <td scope="row " colspan="2" class="text-right"><?php echo number_format($total,2); echo " Tk"; ?></td>
-							                    </tr>
-							                    <tr>
-							                    	
-							                    	<td></td>
-							                    	<td></td>
-							                    	<th colspan="2">VAT (15%)<!-- //$vat--> </th>
-							                    	<td> <?php echo number_format($vat,2); echo " Tk"; ?></td>
-							                    	<td></td>
-
-							                    </tr>
-							                    <tr>
-							                    	
-							                    	<td></td>
-							                    	<td></td>
-							                    	<th colspan="2">Shipping Charge <!-- //$shippingcharge --> </th>
-							                    	<td> <?php echo number_format($inv_shippingcharge,2); echo " Tk"; ?></td>
-							                    	<td></td>
-
-							                    </tr>
-							                     <tr>
-							                    	
-							                    	<td></td>
-							                    	<td></td>
-							                    	<th colspan="2">Grand Total </th>
-							                    	<td> <?php echo number_format($grandtotal,2); echo " Tk"; ?></td>
-							                    	<td></td>
-
-							                    </tr>
-							                    <tr>
-							                    	<th>In words</th>
-							                    	<td colspan="4"> <?php echo $inwords; echo " TAKA ONLY"; ?></td>
-							                    	<td></td>
-							                    </tr>
-							                    <!-- Fetch Cart Items Dynamically -->
-							                         </tbody>
-							                </table>
-												</div>
-											</div>
-									<!-- -----------------------------------------CART List--------------------------------------------------- -->
-
-									</div>
-								<!-- cart details -->
-
-							</div>
-						
+			<!-- -----------------------------------------CART List--------------------------------------------------- -->
 			<!-- ====================================================================================================== -->
+					<div class="row">
+						<div class="col-md-10 offset-md-1">
 
-			<!-- ====================================================================================================== -->
+						<!-- =========================================================================== -->
+						<!-- ----------------------------------CART---------------------- -->
+				                <table class="table table-hover border border-danger">
+				                		<thead>
+				                			<th colspan="6" class="bg-danger">Order details</th>
+				                		</thead>
+				                        <thead>
+				                          <tr>
+				                            <th scope="col">No.</th>
+				                            <th scope="col">Item</th>
+				                            <th scope="col">Price</th>
+				                            <th scope="col">Quantity</th>
+				                            <th scope="col">Total</th>
+				                            <th scope="col"> X </th>
+				                          </tr>
+				                        </thead>
 
+				                    <!-- Fetch Cart Items Dynamically -->
+				                    <?php 
+				                    //Declare Cal vaariables
+				                    $total=0;
+				                    $grandtotal=0;
+				                    $inv_shippingcharge=50;
+				                    $vat=0;
+				                      if(!empty($_SESSION["cart"])){
+				                        $total=0;
+				                        $cartno=1;// for counting item no
+				                        foreach ($_SESSION["cart"] as $key => $value) {
+				                        	
+				                        ?>
+				                        <!-- Fetch Cart Items Dynamically -->
+
+				                        <tbody>
+				                          <tr>
+				                            <th scope="row"><?php echo $cartno; ?></th>
+				                            <td><?php echo $value['item_name']; ?></td>
+				                            <td><?php echo $value['item_price']; ?> BDT</td>
+				                            <td><?php echo $value['item_quantity']; ?></td>
+				                            <td><?php echo number_format(($value['item_quantity']*$value['item_price']), 2);?></td>
+				                            <td><a href ="checkout.php?action=delete&id=<?php echo $value['sl']; ?>"><span class="badge-danger">  X  </span></a></td>
+				                          </tr>
+				                       
+
+				                          <?php 
+				                          //Calculating all totals
+				                            $total= $total+($value['item_quantity']*$value['item_price']);
+
+				                            $vat= ($total*15)/100;//Vat calculation
+
+				                            $grandtotal= $total+$vat+$inv_shippingcharge;//
+
+				                            $inwords=numberTowords($grandtotal);
+				                           ?>
+				                          
+				                        <!-- Fetch Cart Items Dynamically -->
+				                    <?php 
+				                       $cartno+=1;
+
+				                        }
+				                        	
+				                      }
+
+				                    ?>
+				                    <tr>	
+				                    		<td></td>
+				                    		<td></td>
+				                    		<td></td>
+				                            <th scope="row">Total</th>
+				                            <th scope="row " colspan="2"><b class="text-right"><?php echo number_format($total,2); echo " Taka"; ?></b></th>
+				                    </tr>
+				                    <tr>
+				                    	
+				                    	<td></td>
+				                    	<td></td>
+				                    	<th></th>
+				                    	<th>VAT (15%)<!-- //$vat--> </th>
+				                    	<th> <?php echo number_format($vat,2); echo " Taka"; ?></th>
+				                    	<td></td>
+
+				                    </tr>
+				                    <tr>
+				                    	
+				                    	<td></td>
+				                    	<td></td>
+				                    	<th></th>
+				                    	<th>Shipping Charge <!-- //$shippingcharge --> </th>
+				                    	<th> <?php echo number_format($inv_shippingcharge,2); echo " Taka"; ?></th>
+				                    	<td></td>
+
+				                    </tr>
+				                     <tr>
+				                    	
+				                    	<td></td>
+				                    	<td></td>
+				                    	<th></th>
+				                    	<th>Grand Total </th>
+				                    	<th> <?php echo number_format($grandtotal,2); echo " Taka"; ?></th>
+				                    	<td></td>
+
+				                    </tr>
+				                    <tr>
+				                    	<th></th>
+				                    	<th>In words</th>
+				                    	
+				                    	<th colspan="4"> <?php echo $inwords; echo " TAKA ONLY"; ?></th>
+
+				                    </tr>
+				                    <!-- Fetch Cart Items Dynamically -->
+				                         </tbody>
+				                </table>
+						</div>
+					</div>
+			<!-- -----------------------------------------CART List--------------------------------------------------- -->
+
+			<!-- ------------------------------------Invice Details Form----------------------------------------------- -->
+			<form method="POST" enctype="multipart/form-data">
+				<div class="form-group">
+					<label class="col-md-2">Invoice ID</label>
+					<!-- Inv_id --><input type="text" name="inv_id" value="<?php echo $invoice_id; ?> " class="col-md-4 form-control"> 
+				</div>
+				<div class="form-group">
+					<!-- date --><input type="text" name="inv_date" value="<?php echo $date; ?>" class="form-control">
+					<!-- time --><input type="text" name="inv_time" value=" <?php echo $time; ?>" class="form-control "> 
+				</div>
+				<div class="form-group">
+				<!-- name --><input type="text" name="inv_name" placeholder="Your name here"  class="form-control form-control-lg"> 
+					
+				</div>
+				<div class="form-group"></div>
+
+
+				<!-- mobile --><input type="text" name="inv_mobile" placeholder="Your mobile here" class="form-control form-control-lg"> 
+				<!-- email --><input type="text" name="inv_email" placeholder="Your email here" class="form-control form-control-lg"> 
+				<!-- address --><input type="text" name="inv_address"placeholder="Your address here" class="form-control form-control-lg"> 
+				<!-- destaddress --><input type="text" name="inv_destaddress" placeholder="Your destination address here" class="form-control form-control-lg"> 
+
+				<!-- hIDDEN VALUES -->
+				<!-- total --><input type="hidden" name="inv_total" value="<?php echo $total; ?>" class="form-control form-control-lg"> 
+				<!-- vat --><input type="hidden" name="inv_vat" value="<?php echo $vat; ?>" class="form-control form-control-lg"> 
+				<!-- shippingcharge --><input type="hidden" name="inv_shippingcharge" value="<?php echo $inv_shippingcharge; ?>" class="form-control form-control-lg">
+				<!-- grandtotal --><input type="hidden" name="inv_grandtotal" value="<?php echo $grandtotal; ?>" class="form-control form-control-lg">
+				<!-- $inwords --><input type="hidden" name="inv_inwords" value="<?php echo $inwords.' TAKA ONLY'; ?>" class="form-control form-control-lg">
+				<!-- hIDDEN VALUES -->
+
+
+
+<!-- ==============================Experiment============================= -->
+
+
+
+<!-- ==============================Experiment============================= -->
+
+
+
+
+				<!-- Submit Button -->
+				<input type="submit" name="submit" value="Confirm Order" class="btn btn-danger"> 
+
+			</form>
+			<!-- ------------------------------------Invice Details Form----------------------------------------------- -->
 			<!-- ====================================================================================================== -->
             
 			</div>
@@ -580,7 +568,7 @@ include 'dbconfig.php';//connect info to database
 		<!-- Border Row ================ -->
 			</div>
 		</div>
-	
+	</div>
 </div>
 
 

@@ -81,9 +81,9 @@ if (filter_input(INPUT_POST, 'order'))
 
 <!-- Modal Button -->
  <!-- Button trigger modal -->
-      <div class="row fixed-top" style="margin-top:66px; ">
+      <div class="row fixed-top" style="margin-top:46px; ">
         <div class="offset-md-10 col-md ">
-          <button type="button" class="btn btn-danger " style="" data-toggle="modal" data-target="#exampleModalCenter" style="margin-top: 100px;">
+          <button type="button" class="btn btn-danger " style="" data-toggle="modal" data-target="#exampleModalCenterview" style="margin-top: 30px;">
             <b class="h4"> View Cart <i class="bi bi-cart4"></i> </b>
           </button>
         </div>
@@ -91,14 +91,14 @@ if (filter_input(INPUT_POST, 'order'))
 <!-- Modal Button -->
 
 
-<div class="row " style="margin: 8px; padding: 10px;">
+<div class="row " style="margin: 0px; padding: 0px;">
       <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal fade" id="exampleModalCenterview" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Your Cart</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <h5 class="modal-title" id="exampleModalLongTitle">Your Cart <i class="bi bi-cart4"></i></h5>
+                <button type="button" class="close btn btn-danger" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
@@ -106,7 +106,7 @@ if (filter_input(INPUT_POST, 'order'))
                 
 
                 <!-- ----------------------------------CART---------------------- -->
-                  <table class="table table-hover table-danger">
+                  <table class="table table-hover table-bordered border-light">
                         <thead>
                           <tr>
                             <th scope="col">No.</th>
@@ -155,8 +155,10 @@ if (filter_input(INPUT_POST, 'order'))
 
                     ?>
                     <tr>
-                            <th scope="row">Total</th>
-                            <th scope="row text-left"><?php echo number_format($total,2); ?></th>
+                            <td></td>
+                            <td></td>
+                            <th colspan="2" scope="row">Total</th>
+                            <th colspan="2" scope="row text-left"><?php echo number_format($total,2); ?></th>
                           </tr>
                     <!-- Fetch Cart Items Dynamically -->
                          </tbody>
@@ -203,10 +205,10 @@ background-size: contain;
       <h3 class="h3 m-3">
         Welcome to
       </h3>
-     <h1 class="m-4 display-1 text-light">
+     <h1 class="m-5 p-4 display-1 text-light">
        <i class="bi bi-cart">Pink Park</i>
      </h1>
-     <small class="display-6 text-light m-5"> Online Ecommerce developed with Html, CSS, Bootstrap, Php and MySQL</small>
+     <small class="h4 text-light m-5"> Online Ecommerce developed with Html, CSS, Bootstrap, Php and MySQL</small>
   </div>
 </div>
 <!-- Block -->

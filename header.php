@@ -44,12 +44,12 @@
       
 <!--  NAV Menu Bar -->
 
-   <div class="row bg-danger sticky-top mb-3" style="z-index:1;">
+   <div class="row bg-danger sticky-top " style="">
       <div class="col-md-12">
            <nav class="navbar navbar-expand-md navbar-dark bg-danger">
               <a class="navbar-brand" href="#">
                   <h2>
-                      <em>Pink Park</em>
+                      <em><i class="bi bi-cart"></i>Pink Park</em>
                   </h2>
               </a>
               
