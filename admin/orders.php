@@ -162,10 +162,6 @@ if (isset($_GET["action"])) {
                         			
                         		</th>
 
-                        		<!-- Details -->
-                        		<!-- <th> -->
-                        			<!-- <a href ="invoiceview.php?action=view&id=<?php echo $row['inv_id']; ?>" class="btn btn-warning text-dark">Order Details</a> -->
-                        		<!-- </th> -->
                         		<th>
                         			<!--Delivery Status  -->
                         			<em>
@@ -173,7 +169,7 @@ if (isset($_GET["action"])) {
                         				if (empty($row['inv_delivery'])) {
                         					echo "<p>Delivery <span class='text-light bg-danger'> not done!!</span></p>";
                         				}else{
-                        					echo "<p> Delivery is  <span class='text-light bg-danger'>".$row['inv_delivery']." ...</span></p>";
+                        					echo "<p> Delivery  <span class='text-light bg-danger'>".$row['inv_delivery']." ...</span></p>";
                         				}
                         			 ?>
                         			 </em>
@@ -203,7 +199,7 @@ if (isset($_GET["action"])) {
             	</div>
 			<!-- -------------------------------------Table-------------------------------------------------------------------- -->
 			</div>
-	<!-- ----------------------------------------------Orders Table------------------------------------------------------------ -->
+	<!-- --------------------Orders Table----------------------------------- -->
 
 
 	</div>

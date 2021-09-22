@@ -25,7 +25,7 @@
                         <a class="nav-link text-dark btn btn-outline-danger" href="orders.php">Orders</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link text-dark btn btn-outline-danger" href="orders.php">New Admin</a>
+                        <!-- <a class="nav-link text-dark btn btn-outline-danger" href="orders.php">New Admin</a> -->
                       </li>
                       <li class="nav-item">
                         <a class="nav-link text-dark btn btn-outline-danger" href="logout.php">Log out</a>
